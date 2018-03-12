@@ -17,3 +17,8 @@ Properties:file
                 JDBC URL: jdbc:h2:mem:testdb
             clic on the connect button
 
+
+CircleCi:
+    Build the project from the online tool:
+    https://circleci.com/gh/viktorcardona/spring5-recipe-app/2
+
