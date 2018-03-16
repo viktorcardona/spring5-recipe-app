@@ -22,3 +22,13 @@ CircleCi:
     Build the project from the online tool:
     https://circleci.com/gh/viktorcardona/spring5-recipe-app/2
 
+
+WebJars
+
+    http://www.webjars.org/
+    We can add maven dependencies for projects like:
+        bootstrap
+        jquery
+    Then you can make this kind of references from the view:
+        th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"
+        th:href is a tag from thymeleaf
