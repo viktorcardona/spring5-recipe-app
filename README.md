@@ -1,5 +1,8 @@
 # spring5-recipe-app
 
+This app was implemeted by @Jhon Thompson through the course: 
+Spring Framework 5: Beginner to Guru
+
 App downloaded from spring initializer:
 http://start.spring.io/
 
