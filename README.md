@@ -1,5 +1,8 @@
 # spring5-recipe-app
 
+
+[![codecov](https://codecov.io/gh/viktorcardona/spring5-recipe-app/branch/master/graph/badge.svg)](https://codecov.io/gh/viktorcardona/spring5-recipe-app)
+
 This app was implemeted by @Jhon Thompson through the course: 
 Spring Framework 5: Beginner to Guru
 
