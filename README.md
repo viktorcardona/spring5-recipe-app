@@ -1,5 +1,6 @@
 # spring5-recipe-app
 
+[![CircleCI](https://circleci.com/gh/viktorcardona/spring5-recipe-app.svg?style=svg)](https://circleci.com/gh/viktorcardona/spring5-recipe-app)
 
 [![codecov](https://codecov.io/gh/viktorcardona/spring5-recipe-app/branch/master/graph/badge.svg)](https://codecov.io/gh/viktorcardona/spring5-recipe-app)
 
@@ -13,18 +14,25 @@ To run the App:
 ./mvnw spring-boot:run
 
 
-Properties:file
+H2 In Memory DB:
+
+    Check the .properties file
+
     spring.h2.console.enabled=true
+    
         this enable to go to:
+        
             http://localhost:8080/h2-console
-            --------------------------------
+            
             the console of the embedded DB, named h2
                 driver class: org.h2.Driver
                 JDBC URL: jdbc:h2:mem:testdb
             clic on the connect button
 
 
+
 CircleCi:
+
     Build the project from the online tool:
     https://circleci.com/gh/viktorcardona/spring5-recipe-app/2
 
@@ -42,6 +50,9 @@ WebJars
 CodeCov:
 
     https://codecov.io/
+    
+    Configured Report:
+    https://codecov.io/gh/viktorcardona/spring5-recipe-app
     
     Code Coverage Done Right
     
@@ -65,4 +76,16 @@ CodeCov:
               name: Send to CodeCov
               command: bash <(curl -s https://codecov.io/bash)
          
+        The above configuration did not work.
+        It was require to use the maven plugin:
+            jacoco-maven-plugin
+            Instead of:
+            cobertura-maven-plugin
+        And use the following config in the circleci conf file:
+              - run: mvn integration-test
+              - store_test_results:
+                  path: target/surefire-reports
+              - run:
+                  name: Send to CodeCov
+                  command: bash <(curl -s https://codecov.io/bash)
          
