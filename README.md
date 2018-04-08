@@ -35,3 +35,31 @@ WebJars
     Then you can make this kind of references from the view:
         th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"
         th:href is a tag from thymeleaf
+
+CodeCov:
+
+    https://codecov.io/
+    
+    Code Coverage Done Right
+    
+    To generate test coverage of the unit tests:
+    Adding the plugin in the pom.xml:
+        cobertura-maven-plugin
+    
+    Then, for the circle CI script:
+        .circleci/config.yml
+        Look for the line:
+        - run: mvn integration-test
+        And change it to run the test coverage:
+        - run: mvn integration-test cobertura:cobertura
+        
+        Also add the following lines to .circleci/config.yml
+        
+         - store_test_results:
+             path: target/surefire-reports
+        
+          - run:
+              name: Send to CodeCov
+              command: bash <(curl -s https://codecov.io/bash)
+         
+         
