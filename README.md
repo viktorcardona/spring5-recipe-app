@@ -89,3 +89,16 @@ CodeCov:
                   name: Send to CodeCov
                   command: bash <(curl -s https://codecov.io/bash)
          
+
+Docker: Running MySQL in a docker container
+    
+    docker run --name mysqldb -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql
+    The client use for connecting to MySQL DB is:
+
+    https://sequelpro.com/
+
+    Start sequelpro and define the parameters:
+        Host: 127.0.0.1
+        Username: root
+        Clic Test Connection
+

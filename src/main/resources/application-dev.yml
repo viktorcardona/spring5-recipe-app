@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sfg_dev
+    username: sfg_dev_user
+    password: guru
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
+    show-sql: true
+# the following lines are use to generate the DB schema
+#   the db should exist, ensure to run first the script: /resources/scripts/configure-mysql.sql
+#   and of course activate the profile dev
+#   this generates the file: guru_database_create.sql should add on each line semicolon (;)
+#   and execute the script on the DB for the user sfg_dev
+#
+#    properties:
+#      javax:
+#        persistence:
+#          schema-generation:
+#            create-source: metadata
+#            scripts:
+#              action: create
+#              create-target: guru_database_create.sql
